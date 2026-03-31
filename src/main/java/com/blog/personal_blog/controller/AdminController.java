@@ -69,4 +69,10 @@ public class AdminController {
         articleService.deleteArticle(slug);
         return "redirect:/admin/dashboard";
     }
+
+    // Add this to AdminController.java
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "admin/login";
+    }
 }

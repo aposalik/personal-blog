@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${article.title}"></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+<header class="bg-white border-b border-gray-200 py-4 mb-10">
+    <div class="max-w-3xl mx-auto px-4">
+        <a th:href="@{/}" class="text-blue-600 hover:underline text-sm">← Back to Home</a>
+    </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4">
+    <article class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+        <p class="text-xs text-gray-400 mb-2" th:text="${article.date}"></p>
+        <h1 class="text-3xl font-bold text-gray-900 mb-6" th:text="${article.title}"></h1>
+        <div class="text-gray-700 leading-relaxed whitespace-pre-wrap" th:text="${article.content}"></div>
+    </article>
+</main>
+
+</body>
+</html>

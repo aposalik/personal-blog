@@ -21,6 +21,7 @@ public class ArticleRepository {
     // Spring injects the value from application.properties
     public ArticleRepository(@Value("${blog.articles.directory}") String articlesDir) {
         this.articlesDir = articlesDir;
+        new File(articlesDir).mkdirs();
 
         // Jackson needs this module to handle LocalDate correctly
         this.objectMapper = new ObjectMapper();

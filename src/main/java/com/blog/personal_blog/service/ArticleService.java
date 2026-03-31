@@ -66,7 +66,7 @@ public class ArticleService {
 
     // SLUG GENERATOR — private helper
     private String generateSlug(String title) {
-        return title.toLowerCase().replaceAll("\\\\s+","-")
-                .replaceAll("[^a-z0-9-]","");
+        return title.toLowerCase().replaceAll("\\s+", "-")
+                .replaceAll("[^a-z0-9-]", "");
     }
 }

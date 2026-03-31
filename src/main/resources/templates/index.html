@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+<header class="bg-white border-b border-gray-200 py-6 mb-10">
+    <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl font-bold text-gray-900">My Personal Blog</h1>
+        <p class="text-gray-500 mt-1 text-sm">Thoughts, stories and ideas.</p>
+    </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4">
+    <div th:if="${#lists.isEmpty(articles)}" class="text-gray-400 text-center py-20">
+        No articles yet.
+    </div>
+
+    <div th:each="article : ${articles}" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6 hover:shadow-md transition">
+        <p class="text-xs text-gray-400 mb-1" th:text="${article.date}"></p>
+        <h2 class="text-xl font-semibold text-gray-900 mb-2" th:text="${article.title}"></h2>
+        <a th:href="@{/article/{slug}(slug=${article.slug})}"
+           class="text-blue-600 hover:underline text-sm font-medium">Read More →</a>
+    </div>
+</main>
+
+</body>
+</html>
