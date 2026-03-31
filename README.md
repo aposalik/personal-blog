@@ -114,4 +114,5 @@ Example — `data/articles/my-first-post.json`:
   "content": "Hello world!",
   "date": "2026-04-01"
 }
+https://roadmap.sh/projects/personal-blog
 ```
